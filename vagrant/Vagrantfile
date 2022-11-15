@@ -2,13 +2,13 @@
 # vi: set ft=ruby :
 
 vms = {
-    'lab-ansible-1' => {'memory' => '512', 'cpus' => 1, 'ip' => '10'},
-    'lab-ansible-2' => {'memory' => '512', 'cpus' => 1, 'ip' => '20'}
+    'lab-ansible-1' => {'memory' => '1024', 'cpus' => 1, 'ip' => '10'},
+    'lab-ansible-2' => {'memory' => '1024', 'cpus' => 1, 'ip' => '20'}
   }
   
   Vagrant.configure('2') do |config|
   
-    config.vm.box = 'ubuntu/trusty64'
+    config.vm.box = 'centos/7'
     config.vm.box_check_update = false
   
     vms.each do |name, conf|
@@ -27,10 +27,15 @@ vms = {
         end
   
         m.vm.provision "shell", inline: <<-'SHELL'
-          apt-get update
-          apt-get install -y ansible vim
+          yum update
+          yum install -y epel-release
+          yum install -y ansible vim git
+          alias yum=dnf
           mkdir -p /root/.ssh
+          mkdir -p /etc/ansible/
           cp /vagrant/files/id_rsa* /root/.ssh
+          cp -r /vagrant/ansible /root/
+          cp /vagrant/ansible/hosts /etc/ansible/hosts
           chmod 400 /root/.ssh/id_rsa*
           cp /vagrant/files/id_rsa.pub /root/.ssh/authorized_keys
           cp -r /vagrant/files/site /root/site

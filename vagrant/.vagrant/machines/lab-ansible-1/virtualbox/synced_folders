@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/rogerio/Documents/ansible/trabalho-ansible/vagrant","disabled":false,"__vagrantfile":true}}}
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/rogerio/Documents/ansible/trabalho-ansible/lab-ansible-senai/vagrant","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
