@@ -1,13 +1,11 @@
-#PHP Settings
-php_modules: [ 'php', 'php-curl', 'php-gd', 'php-mbstring', 'php-xml', 'php-xmlrpc', 'php-soap', 'php-intl', 'php-zip' ]
- 
-#MySQL Settings
-mysql_root_password: "your-root-password"
-mysql_db: "wpdb"
-mysql_user: "wpuser"
-mysql_password: "password"
- 
-#HTTP Settings
-http_host: "wp.example.com"
-http_conf: "wp.example.com.conf"
+#Configurações do sistema
+php_modules: ['php-curl', 'php-gd', 'php-mbstring', 'php-xml', 'php-xmlrpc', 'php-soap', 'php-intl', 'php-zip' ]
+# Configurações do MySQL
+mysql_root_password: "mysql_root_password"
+mysql_db: "wordpress"
+mysql_user: "ubuntupit"
+mysql_password: "senha"
+# Configurações HTTP
+http_host: "seu_dominio"
+http_conf: "seu_dominio.conf"
 http_port: "80"
